@@ -44,7 +44,7 @@
         border: 1px solid orange;
         outline: unset;
         background-color: inherit;
-        padding: 5px;
+        padding: 10px;
         margin-top: 20px;
         margin-left: 10px;
         border-radius: 6px;
