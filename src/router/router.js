@@ -1,27 +1,31 @@
 import Main from "@/pages/Main";
 import About from "@/pages/About";
+import PostId from "@/pages/PostId";
 import PostPage from "@/pages/PostPage";
-import {
-  createRouter,
-  createWebHistory
-} from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [{
-  path: '/',
-  component: Main
-},
+const routes = [
   {
-    path: '/posts',
-    component: PostPage
+    path: "/",
+    component: Main,
   },
   {
-    path: '/about',
-    component: About
-  }]
+    path: "/posts",
+    component: PostPage,
+  },
+  {
+    path: "/about",
+    component: About,
+  },
+  {
+    path: "/posts/:id",
+    component: PostId,
+  },
+];
 
 const router = createRouter({
   routes,
-  history: createWebHistory(process.env.BASE_URL)
-})
+  history: createWebHistory(process.env.BASE_URL),
+});
 
 export default router;

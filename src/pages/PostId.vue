@@ -1,5 +1,7 @@
 <template>
-  <div>Главная страница</div>
+  <div>
+    <h1>Пост ID = {{ $route.params.id }}</h1>
+  </div>
 </template>
 
 <script>

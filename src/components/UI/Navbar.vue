@@ -14,9 +14,17 @@
       >
 
       <my-button
-        ><router-link to="posts" class="navbar__link"
-          >Посты</router-link
-        ></my-button
+        style="
+          color: white;
+          border: 1px solid white;
+          border-radius: 6px;
+          padding: 5px;
+          height: 30px;
+          margin-top: 5px;
+          margin-left: 20px
+        "
+        @click="$router.push('/posts/')"
+        >Посты</my-button
       >
     </div>
   </div>

@@ -21,7 +21,7 @@
     />
 
     <div class="loading" v-if="isPostLoading">идет загрузка...</div>
-    <div ref="observer" class="observer"></div>
+    <div v-intersection="loadMorePosts" class="observer"></div>
     <!--  <div class="pagination">
       <div 
       class="page" 
@@ -124,7 +124,7 @@ export default {
   mounted() {
     this.fetchPosts();
 
-    const options = {
+    /* const options = {
       rootMargin: "0px",
       threshold: 1.0,
     };
@@ -133,7 +133,7 @@ export default {
         this.loadMorePosts();
     };
     const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer);
+    observer.observe(this.$refs.observer); */
   },
   computed: {
     sortedPosts() {
