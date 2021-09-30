@@ -6,6 +6,7 @@
           >О нас</router-link
         ></my-button
       >
+     
 
       <my-button
         ><router-link class="navbar__link" to="/"
@@ -26,6 +27,16 @@
         @click="$router.push('/posts/')"
         >Посты</my-button
       >
+         <my-button
+        ><router-link to="/store" class="navbar__link"
+          >Vuex</router-link
+        ></my-button
+      >
+      <my-button
+        ><router-link to="/composition" class="navbar__link"
+          >Composition</router-link
+        ></my-button
+      >
     </div>
   </div>
 </template>
@@ -45,7 +56,7 @@ export default {
   align-items: center;
 }
 .navbar__btn {
-  width: 300px;
+  width: 500px;
   display: flex;
 }
 .navbar__link {
