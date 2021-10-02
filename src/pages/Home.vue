@@ -71,7 +71,7 @@ export default {
         { id: 4, name: "About me", image: require("../images/about.png") },
         { id: 5, name: "Todo list", image: require("../images/todolist.png") },
         { id: 6, name: "Terminal", image: require("../images/terminal.png") },
-        { id: 7, name: "Instagram", image: require("../images/instagram.png") },
+        { id: 7, name: "Instagram", image: require("../images/instagram.png") }
       ],
       currentTimeData: "",
       sidebarState: false,

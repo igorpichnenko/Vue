@@ -15,6 +15,7 @@
       <Todolist v-if="i == 5" />
       <Terminal v-if="i == 6" />
       <Instagram v-if="i == 7" />
+      <Project v-if="i == 0" />
     </div>
   </div>
 </template>
@@ -27,6 +28,7 @@ import About from "./About.vue";
 import Todolist from "./Todolist.vue";
 import Contact from "./Contact.vue";
 import Instagram from "./Instagram.vue";
+import Project from "./Project.vue";
 export default {
   name: "Window",
   data() {
@@ -43,6 +45,7 @@ export default {
     Todolist,
     Contact,
     Instagram,
+    Project,
   },
   mounted() {
     if (this.i === 7) {
