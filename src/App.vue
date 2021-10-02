@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <div class="body">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -42,6 +44,8 @@ export default {
 html,
 body {
   margin: 0;
+  background-color: rgba(218, 210, 217, 0.63);
+  height: 100%;
 }
 h1 {
   margin: 0;
