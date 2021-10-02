@@ -10,4 +10,4 @@ export default function useSortedPosts(sortedPosts) {
     return {
         searchQuery, sortedAndSearchedPosts
     }
-};
+}
