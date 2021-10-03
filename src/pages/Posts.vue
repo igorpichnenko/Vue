@@ -1,4 +1,5 @@
 <template>
+  <navbar />
   <div>
     <div class="posts">
       <div class="posts__items">
@@ -11,7 +12,11 @@
         <my-dialog v-model:show="dialogVisible">
           <post-form @create="createPost" />
         </my-dialog>
-        <post-list  @remove="removePost" :posts="sortedAndSearchedPosts" v-if="!isPostsLoading" />
+        <post-list
+          @remove="removePost"
+          :posts="sortedAndSearchedPosts"
+          v-if="!isPostsLoading"
+        />
         <div v-else>Идет загрузка...</div>
         <div class="posts__pagination">
           <div
@@ -27,6 +32,7 @@
           </div>
         </div>
       </div>
+      <a-form />
     </div>
   </div>
 </template>
@@ -41,6 +47,9 @@ import { usePosts } from "@/hooks/usePosts";
 import useSortedPosts from "@/hooks/useSortedPosts";
 import useSortedAndSearchedPosts from "@/hooks/useSortedAndSearchedPosts";
 import background from "../images/backgroundHome.jpeg";
+import { mapMutations } from "vuex";
+import Navbar from "../components/Navbar.vue";
+
 export default {
   name: "Posts",
   components: {
@@ -49,6 +58,7 @@ export default {
     MyButton,
     PostList,
     PostForm,
+    Navbar,
   },
   data() {
     return {
@@ -62,6 +72,9 @@ export default {
     };
   },
   methods: {
+    ...mapMutations({
+      setIsAuth: "setIsAuth",
+    }),
     changePage(pageNumber) {
       this.page = pageNumber;
     },
@@ -69,13 +82,14 @@ export default {
       this.posts.push(post);
       this.dialogVisible = false;
     },
-     showDialog() {
+    showDialog() {
       this.dialogVisible = true;
     },
-     removePost(post) {
-      this.posts = this.posts.filter(p => p.id !== post.id)
+    removePost(post) {
+      this.posts = this.posts.filter((p) => p.id !== post.id);
     },
   },
+
   watch: {
     page() {
       this.fetching(this.page);
@@ -100,7 +114,12 @@ export default {
     };
   },
   mounted() {
-    this.fetching();
+    this.fetching(this.page);
+
+    if (!this.$store.state.isAuth && !localStorage.getItem("auth")) {
+      this.$router.push("/auth");
+    }
+    console.log(!this.$store.state.isAuth && !localStorage.getItem("auth"))
   },
 };
 </script>

@@ -3,6 +3,7 @@ import Intro from "../pages/Intro.vue";
 import Home from "../pages/Home.vue";
 import Login from "../pages/Login.vue";
 import Posts from "../pages/Posts.vue";
+import Auth from "../pages/Auth.vue";
 import PostIdPage from "../pages/PostIdPage.vue";
 
 const routes = [
@@ -25,6 +26,10 @@ const routes = [
   {
     path: "/posts/:id",
     component: PostIdPage,
+  },
+  {
+    path: "/auth",
+    component: Auth,
   },
 ];
 

@@ -4,6 +4,7 @@ import axios from "axios";
 const store = createStore({
   state() {
     return {
+      isAuth: false,
       weatherData: [
         "",
         [
@@ -21,6 +22,9 @@ const store = createStore({
   mutations: {
     setRandomIndex(state) {
       state.randomIndex = Math.floor(Math.random() * 7);
+    },
+    setIsAuth(state, isAuth) {
+      state.isAuth = isAuth;
     },
     setWeatherData(state, data) {
       let fiveHoursData = [

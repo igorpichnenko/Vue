@@ -18,5 +18,6 @@ export default {
   border: 1px solid teal;
   border-radius: 6px;
   margin-right: 10px;
+  cursor: pointer;
 }
 </style>

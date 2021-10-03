@@ -5,7 +5,7 @@
       <div><strong>Название:</strong> {{ post.title }}</div>
       <div><strong>Описание:</strong> {{ post.body }}</div>
     </div>
-    <div class="post__btns">
+    <div v-if="show" class="post__btns">
       <my-button
         @click="$router.push(`/posts/${post.id}`)"
       >
@@ -23,6 +23,10 @@
 <script>
 export default {
   props: {
+    show:{
+      type: Boolean,
+      default: true
+    },
     post: {
       type: Object,
       required: true,

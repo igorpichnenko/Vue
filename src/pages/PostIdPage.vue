@@ -1,15 +1,22 @@
 <template>
+  <navbar />
   <div class="post">
     <h1>Подробности о посте</h1>
-    <post-item v-for="post in posts" :post="post" :key="post.id" />
+    <post-item
+      v-for="post in posts"
+      :post="post"
+      :key="post.id"
+      :show="false"
+    />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import PostItem from "@/components/PostItem";
+import Navbar from "../components/Navbar.vue";
 export default {
-  components: { PostItem },
+  components: { PostItem, Navbar },
   data() {
     return {
       posts: [],
@@ -24,14 +31,12 @@ export default {
           "https://jsonplaceholder.typicode.com/posts",
           {
             params: {
-              _id: 1,
+              id: this.$route.params.id,
               _limit: this.limit,
             },
           }
         );
-        this.totalPages = Math.ceil(
-          response.headers["x-total-count"] / this.limit
-        );
+
         this.posts = response.data;
       } catch (e) {
         alert("Ошибка");
@@ -40,7 +45,9 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-   
+    if (!this.$store.state.isAuth && !localStorage.getItem("auth")) {
+      this.$router.push("/auth");
+    }
   },
 };
 </script>

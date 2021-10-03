@@ -1,5 +1,6 @@
 <template>
   <div class="project">
+    <h1 class="project__title">Мои проекты</h1>
     <ul>
       <li class="project__link">
         <a href="https://next-js-toxin-i2y5ln7tm-igorpichnenko.vercel.app/"
@@ -36,6 +37,8 @@
         >
       </li>
     </ul>
+
+    <h3 @click="$router.push('/posts')" class="project__posts">Перейти на страницу с постами =></h3>
   </div>
 </template>
 
@@ -58,5 +61,13 @@ export default {
 }
 .project__link {
   margin-bottom: 20px;
+}
+.project__title {
+  margin: 40px;
+}
+.project__posts{
+ margin: 40px;
+ cursor: pointer;
+ color: goldenrod;
 }
 </style>
