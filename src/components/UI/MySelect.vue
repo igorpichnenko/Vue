@@ -34,7 +34,7 @@ export default {
 <style scoped>
 .my-select{
   color: teal;
-  background-color: white;
+  background-color: inherit;
   outline: unset;
   border: 1px solid teal;
   border-radius: 6px;

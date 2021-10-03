@@ -52,7 +52,7 @@ export default {
   box-shadow: 2px 2px 4px gray;
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  padding: 20px 15px;
 }
 .navbar__btns {
   margin-left: auto;

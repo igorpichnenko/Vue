@@ -1,24 +1,33 @@
 <template>
-  <navbar />
-  <div class="auth">
-    <form class="auth__form">
-      <h2>Форма авторизации</h2>
-      <my-input type="email" v-model="inputLogin" placeholder="Введите email" />
-      <my-input
-        type="password"
-        v-model="inputPassword"
-        placeholder="Введите пароль"
-      />
-      <div class="auth__items">
-        <my-button @click.prevent="submitForm" type="submit">Войти</my-button>
-        <label class="auth__label"
-          >запомнить вход<input
-            @change="checkboxChange"
-            class="auth__checkbox"
-            type="checkbox"
-        /></label>
-      </div>
-    </form>
+  <div class="wrapper">
+    <navbar />
+    <div class="auth">
+      <form class="auth__form">
+        <h2>Форма авторизации</h2>
+        <my-input
+          type="email"
+          v-model="inputLogin"
+          placeholder="Введите email"
+        />
+        <my-input
+          type="password"
+          v-model="inputPassword"
+          placeholder="Введите пароль"
+        />
+        <div class="auth__items">
+          <my-button @click.prevent="submitForm" type="submit">Войти</my-button>
+          <label class="auth__label"
+            >запомнить вход<input
+              @change="checkboxChange"
+              class="auth__checkbox"
+              type="checkbox"
+          /></label>
+        </div>
+      </form>
+    </div>
+    <div class="auth__footer">
+      <my-footer />
+    </div>
   </div>
 </template>
 
@@ -90,6 +99,16 @@ export default {
   justify-content: center;
   padding: 40px;
   margin-top: 100px;
+  flex: 1 0 auto;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.auth__footer {
+  flex: 0 0 auto;
 }
 .auth__form {
   min-width: 500px;

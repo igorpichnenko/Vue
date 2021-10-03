@@ -1,10 +1,12 @@
 <template>
-  <navbar />
-  <div>
+  <div class="wrapper">
+    <navbar />
     <div class="posts">
       <div class="posts__items">
         <h1>Страница с постами</h1>
-        <my-input v-model="searchQuery" placeholder="Поиск...." v-focus />
+        <div class="post__input">
+          <my-input v-model="searchQuery" placeholder="Поиск...." v-focus />
+        </div>
         <div class="posts__btns">
           <my-button @click="showDialog"> Создать пост</my-button>
           <my-select v-model="selectedSort" :options="sortOptions" />
@@ -33,6 +35,9 @@
         </div>
       </div>
       <a-form />
+    </div>
+    <div class="posts__footer">
+      <my-footer />
     </div>
   </div>
 </template>
@@ -119,17 +124,26 @@ export default {
     if (!this.$store.state.isAuth && !localStorage.getItem("auth")) {
       this.$router.push("/auth");
     }
-    console.log(!this.$store.state.isAuth && !localStorage.getItem("auth"))
   },
 };
 </script>
 
 
 <style>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .posts {
+  flex: 1 0 auto;
+}
+.posts__footer {
+  flex: 0 0 auto;
+}
+.posts__items {
   padding: 40px;
 }
-
 .posts__btns {
   margin: 15px 0;
   display: flex;
@@ -149,6 +163,9 @@ export default {
 .posts__current-page {
   border: 2px solid teal;
   border-radius: 6px;
+}
+.post__input {
+  width: 98%;
 }
 </style>
 

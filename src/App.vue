@@ -1,7 +1,5 @@
 <template>
-  <div class="body">
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -52,5 +50,8 @@ h1 {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+#app {
+  height: 100%;
 }
 </style>
