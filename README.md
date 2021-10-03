@@ -1,3 +1,29 @@
 
+## Тэстовое задание
+```
+login: admin@test.ru
+password: 12345678qwe
+```
 
-## [Просмотр работы](https://vue-4fqn8lo0e-mackbookportfolio.vercel.app/)
+## Usage
+1. Copy this repository.
+```
+git clone git@github.com:igorpichnenko/Vue.git
+cd ant
+```
+2. Install dependencies
+```
+yarn install
+```
+
+3. Run app
+``` bash
+# Dev
+yarn serve
+
+# Production
+yarn build
+
+```
+
+## [Просмотр работы](https://vue-bp4sc0til-mackbookportfolio.vercel.app/)
